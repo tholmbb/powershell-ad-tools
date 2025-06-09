@@ -3,5 +3,9 @@
 This repository contains simple PowerShell scripts I've created and actively use at work.  
 Most of them are related to Active Directory and user access management tasks.
 
-💡 **Note:** Scripts with the `-CD.ps1` suffix are designed for use in cross-domain environments.  
-`CD` stands for **Cross Domain**.
+---
+
+## 🔄 Folder Structure
+
+- `Standard/` – Scripts designed for use within a **single domain** environment.
+- `CrossDomain/` – Scripts with the `-CD.ps1` suffix, designed for use in **cross-domain** environments.
