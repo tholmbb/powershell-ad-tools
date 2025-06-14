@@ -1,11 +1,11 @@
 # Prompt the user to enter a username
-$username = Read-Host "Enter username"
+$username = Read-Host "Enter the username (samAccountName)"
 
-# Define the domain controller to query (replace with your actual domain)
-$domainController = "your.domain"
+# Prompt for the target domain
+$TargetDomain = Read-Host "Enter your domain (e.g., your.local)"
 
 # Retrieve the user object from Active Directory, including the password expiry time
-$user = Get-ADUser -Server $domainController -Identity $username -Properties "msDS-UserPasswordExpiryTimeComputed"
+$user = Get-ADUser -Server $TargetDomain -Identity $username -Properties "msDS-UserPasswordExpiryTimeComputed"
 
 # Check if the user was found
 if ($user) {
