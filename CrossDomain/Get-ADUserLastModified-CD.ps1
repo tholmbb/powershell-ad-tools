@@ -1,8 +1,8 @@
 # Prompt for the sAMAccountName of the user to search
 $SamAccountName = Read-Host "Enter the username (sAMAccountName) of the user"
 
-# Prompt for the domain controller FQDN or domain name
-$TargetDomain = Read-Host "Enter your domain or domain controller (e.g., your.local)"
+# Prompt for the target domain (e.g., "your.local")
+$TargetDomain = Read-Host "Enter your domain (e.g., your.local)"
 
 # Prompt for credentials if needed
 $Credential = Get-Credential -Message "Enter your credentials in the format DOMAIN\username"
