@@ -1,5 +1,5 @@
 # Prompt for the sAMAccountName of the user to search
-$SamAccountName = Read-Host "Enter the username (sAMAccountName) of the user"
+$TargetUser = Read-Host "Enter the username (sAMAccountName) of the user"
 
 # Prompt for the target domain (e.g., "your.local")
 $TargetDomain = Read-Host "Enter your domain (e.g., your.local)"
@@ -9,14 +9,14 @@ $Credential = Get-Credential -Message "Enter your credentials in the format DOMA
 
 # Attempt to retrieve the user object
 try {
-    $User = Get-ADUser -Server $TargetDomain -Credential $Credential -Filter {SamAccountName -eq $SamAccountName} -Properties whenChanged
+    $$User = Get-ADUser -Server $TargetDomain -Credential $Credential -Filter "SamAccountName -eq '$TargetUser'" -Properties whenChanged
 
     if ($User) {
         Write-Output "User found in domain: $TargetDomain"
         Write-Output "Username: $($User.SamAccountName)"
         Write-Output "Last modified: $($User.whenChanged)"
     } else {
-        Write-Output "User '$SamAccountName' was not found in domain $TargetDomain."
+        Write-Output "User '$TargetUser' was not found in domain $TargetDomain."
     }
 }
 catch {
