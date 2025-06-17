@@ -9,7 +9,7 @@ $Credential = Get-Credential -Message "Enter your credentials in the format DOMA
 
 # Attempt to retrieve the user object
 try {
-    $$User = Get-ADUser -Server $TargetDomain -Credential $Credential -Filter "SamAccountName -eq '$TargetUser'" -Properties whenChanged
+    $User = Get-ADUser -Server $TargetDomain -Credential $Credential -Filter "SamAccountName -eq '$TargetUser'" -Properties whenChanged
 
     if ($User) {
         Write-Output "User found in domain: $TargetDomain"
