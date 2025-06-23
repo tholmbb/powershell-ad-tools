@@ -5,7 +5,7 @@ $TargetUser = Read-Host "Enter the username (sAMAccountName) of the user"
 $TargetDomain = Read-Host "Enter your domain (e.g., your.local)"
 
 # Prompt for credentials if needed
-$Credential = Get-Credential -Message "Enter your credentials in the format DOMAIN\username"
+$Credential = Get-Credential -Message "Enter your credentials for the domain"
 
 # Attempt to retrieve the user object
 try {
