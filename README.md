@@ -5,14 +5,14 @@ Most of them are related to Active Directory and user access management tasks.
 
 ---
 
-## 🔄 Folder Structure
+## Folder Structure
 
 - `Standard/` – Scripts designed for use within a **single domain** environment.
 - `CrossDomain/` – Scripts with the `-CD.ps1` suffix, designed for use in **cross-domain** environments.
 
 ---
 
-## 📝 Notes
+## Notes
 
 - Scripts are categorized based on their usage environment.
 - This improves maintainability and keeps the repository organized as more scripts are added.
